@@ -1,6 +1,4 @@
 package com.practice.elevatorlld.elevatorstates;
-
-import com.practice.elevatorlld.models.Direction;
 import com.practice.elevatorlld.models.Elevator;
 import com.practice.elevatorlld.models.Request;
 

@@ -20,7 +20,7 @@ public class MovingDownState extends ElevatorState {
             } else if (request.getDirection() == Direction.UP) {
                 elevator.getUpMinPQ().offer(request.getFloorNumber());
             } else if (request.getDirection() == Direction.DOWN && elevator.getCurrentFloor() < request.getFloorNumber()) {
-                elevator.getPendingJobs().add(request.getFloorNumber());
+                elevator.getPendingJobs().add(request);
             }
             return;
         }
@@ -51,6 +51,10 @@ public class MovingDownState extends ElevatorState {
         if(elevator.getDownMaxPQ().isEmpty())
         {
             elevator.setCurrentElevatorState(new IdleState(elevator));
+            elevator.getPendingJobs().forEach(req ->
+            {
+                elevator.getCurrentElevatorState().addRequest(req);
+            });
         }
         System.out.println("Entered out of moving down state Move with elevator " + getElevator().getId());
     }

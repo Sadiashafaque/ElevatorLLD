@@ -21,7 +21,7 @@ public class Elevator{
     private boolean isRunning = true;
     private PriorityQueue<Integer> upMinPQ = new PriorityQueue<>(); // min heap
     private PriorityQueue<Integer> downMaxPQ = new PriorityQueue<>(Collections.reverseOrder()); // maxheap
-    private List<Integer> pendingJobs = new ArrayList<>();
+    private List<Request> pendingJobs = new ArrayList<>();
     private ElevatorState currentElevatorState;
 
     public Elevator(int startingFloor) {
