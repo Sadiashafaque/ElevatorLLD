@@ -10,13 +10,11 @@ public class ElevatorController {
 
     public void requestForLift(Request request)
     {
-        System.out.println("asasa");
        elevatorService.requestForLift(request);
     }
 
     public void start()
     {
-        System.out.println("fdfd");
         elevatorService.start();
     }
 
